@@ -1,0 +1,15 @@
+header, .menu  {
+    display: flex;
+    color: red;
+    background-color: #383c41;
+}
+.logo {
+    height: 100px;
+}
+.menu {
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    width: 100%;
+    padding-left: 20%;
+}
