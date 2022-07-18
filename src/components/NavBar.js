@@ -1,9 +1,12 @@
-import logo from '../images/Logo.jpg'
-import './NavBar.css'
+import logo from '../images/Logo.svg';
+import './NavBar.css';
 const NavBar = () => {
     return (
         <header>
-            <img className='logo' src= {logo}/>
+            <div className='logo'>
+                <img className='logo__image' src= {logo}/>
+                <span>D´pelos</span>
+            </div>
             <ul className='menu'>
                 <li className='menu__item'>
                     <a className='menu__link'>
