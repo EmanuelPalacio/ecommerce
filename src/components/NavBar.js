@@ -1,4 +1,5 @@
 import logo from '../images/Logo.svg';
+import CartWidget from './CartWidget';
 import './styles/NavBar.css';
 
 const NavBar = () => {
@@ -23,6 +24,9 @@ const NavBar = () => {
                     <a className='menu__link' href='#'>
                         Contacto
                     </a>
+                </li>
+                <li className='menu__item'>
+                    <CartWidget/>
                 </li>
             </ul>
         </header>
