@@ -1,5 +1,6 @@
 import logo from '../images/Logo.svg';
-import './NavBar.css';
+import './styles/NavBar.css';
+
 const NavBar = () => {
     return (
         <header>
@@ -9,17 +10,17 @@ const NavBar = () => {
             </div>
             <ul className='menu'>
                 <li className='menu__item'>
-                    <a className='menu__link'>
+                    <a className='menu__link' href='#'>
                         Inicio
                     </a>
                 </li>
                 <li className='menu__item'>
-                    <a className='menu__link'>
+                    <a className='menu__link' href='#'>
                         Productos
                     </a>
                 </li>
                 <li className='menu__item'>
-                    <a className='menu__link'>
+                    <a className='menu__link' href='#'>
                         Contacto
                     </a>
                 </li>
