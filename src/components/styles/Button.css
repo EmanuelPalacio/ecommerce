@@ -1,0 +1,10 @@
+.btn {
+    color: red;
+    height: 30px;
+    width: 30px;
+    background-color: white;
+    border: 2px solid black;
+}
+.btn:active{
+    transform: scale(0.9);
+}
