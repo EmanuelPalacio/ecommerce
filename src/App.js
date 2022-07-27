@@ -7,7 +7,7 @@ function App() {
     <div className="App">
       <NavBar/>
       <ItemListContainer greeting='Hola mundo'/>
-      <ItemCount stock="20" initial="10"/>
+      <ItemCount stock={20} initial={10}/>
     </div>
   );
 }

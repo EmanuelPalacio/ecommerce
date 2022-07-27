@@ -1,7 +1,6 @@
 .btn {
     color: red;
-    height: 30px;
-    width: 30px;
+    padding: 10px;
     background-color: white;
     border: 2px solid black;
 }
