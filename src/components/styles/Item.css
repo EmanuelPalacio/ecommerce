@@ -1,0 +1,25 @@
+.card_container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-auto-rows: 350px;
+    margin: 15vh;
+    gap: 10px;
+}
+.card {
+    position: relative;
+    border-radius: 15px;
+    background-color: black;
+    
+}
+.card img {
+    padding-top: 20px;
+    width: 90%;
+}
+.card__count {
+    position:absolute;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    bottom: 0;
+    margin-bottom: 10px;
+}
