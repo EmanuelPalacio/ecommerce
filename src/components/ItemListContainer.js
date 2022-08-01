@@ -8,7 +8,6 @@ const ItemListContainer = (props) => {
     const getProducts = async () => {
         const getData = await data
         setListProducts(getData)
-        console.log(data)
     }
 
     useEffect(()=>{
@@ -18,7 +17,7 @@ const ItemListContainer = (props) => {
     return (
         <div>
             <h1>{props.greeting}</h1>
-            { listProducts !== [] && <ItemList listProducts={listProducts}/>}
+            { listProducts.length == 0 ? <p>Cargando...</p>  : <ItemList listProducts={listProducts}/>}
         </div>
     )
 }

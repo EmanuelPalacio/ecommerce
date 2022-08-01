@@ -6,7 +6,7 @@ export default function Item ({product}) {
         <div className="card">
             <img src={product.imagen} />
             <div className="card__count">
-            <p>{product.tittle}</p>
+            <p>{product.title}</p>
             <p>${product.price}</p>
             <ItemCount initial={product.unidad} stock={20} name={product.tittle}/>
             </div>
