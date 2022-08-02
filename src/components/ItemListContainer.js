@@ -2,17 +2,20 @@ import React from "react";
 import {useState, useEffect} from "react";
 import ItemList from "./ItemList";
 import { data } from "../mock/mock";
+import {useParams} from "react-router-dom"
 
 const ItemListContainer = (props) => {
     const [listProducts, setListProducts]= useState([])
+    const { category } = useParams();
+    console.log(category);
     const getProducts = async () => {
         const getData = await data
-        setListProducts(getData)
-    }
-
+        category ? setListProducts(getData.filter((product)=> product.category === category)) : 
+        setListProducts(getData);
+    };  
     useEffect(()=>{
         getProducts();
-    }, []) //el array vacio hace que se ejecute una sola vez la llamada
+    }, [category]); //el array vacio hace que se ejecute una sola vez la llamada
 
     return (
         <div>
