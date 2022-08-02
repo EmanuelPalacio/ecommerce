@@ -1,0 +1,12 @@
+.itemDetail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 85vh;
+}
+.itemDetail__container{
+    text-align: center;
+}
+.itemDetail__img{
+    height: 300px;
+}

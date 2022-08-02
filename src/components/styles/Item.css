@@ -6,9 +6,7 @@
     gap: 10px;
 }
 .card {
-    position: relative;
     border-radius: 15px;
-    background-color: black;
     text-align: center;
     
 }
@@ -17,10 +15,6 @@
     width: 90%;
 }
 .card__count {
-    position:absolute;
-    bottom: 0;
-    width: 100%;
     color: white;
-    bottom: 0;
     margin-bottom: 10px;
 }

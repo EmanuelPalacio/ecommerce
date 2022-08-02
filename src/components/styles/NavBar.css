@@ -5,7 +5,7 @@ header, .menu  {
     overflow: hidden;
 }
 header {
-    height: 100px;
+    height: 15vh;
 }
 .logo {
     display: flex;
