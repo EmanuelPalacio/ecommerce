@@ -1,7 +1,7 @@
 header, .menu  {
     display: flex;
-    color: red;
-    background-color: #383c41;
+    background-color: white;
+    text-align: center;
     overflow: hidden;
 }
 header {
@@ -28,4 +28,7 @@ header {
 }
 .menu__item:hover {
     transform: scale(1.2);
+}
+.menu__link, .menu__link:link , .logo__link span , .logo__link span:link {
+    color: black;
 }

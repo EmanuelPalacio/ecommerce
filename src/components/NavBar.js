@@ -8,7 +8,7 @@ const NavBar = () => {
         <header>
             
             <div className='logo'>
-                <Link to={'/'} >
+                <Link className='logo__link' to={'/'} >
                     <img className='logo__image' src= {logo}/>
                     <span>D´pelos</span>
                 </Link>

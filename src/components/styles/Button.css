@@ -1,8 +1,10 @@
 .btn {
     color: red;
-    padding: 10px;
-    background-color: white;
-    border: 2px solid black;
+    padding: 15px;
+    margin: 5px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.637);
+    border: 1px solid black;
 }
 .btn:active{
     transform: scale(0.9);

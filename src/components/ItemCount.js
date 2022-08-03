@@ -9,7 +9,7 @@ export default function ItemCount(props) {
     const onAdd = () => console.log(`tienes ${contador} unidades de ${props.name}`)
 
     return (
-    <div className="card">
+    <div className={props.className}>
         <span>{contador}</span>
         <Button content="-" className="btn" event={subtract}/>
         <Button content="+" className="btn" event={add}/>

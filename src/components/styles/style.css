@@ -1,4 +1,10 @@
 * {
     margin: 0;
     padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+#root {
+    min-height: 100vh;
+    background-color: rgba(56,60,65,1) ;
 }
