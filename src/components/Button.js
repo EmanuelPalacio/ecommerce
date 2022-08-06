@@ -1,5 +1,5 @@
-export default function ContadorHooks(props) {
+export default function ContadorHooks({className, event , content}) {
     return (
-    <button className={props.className} onClick={props.event}>{props.content}</button>
+    <button className={className} onClick={event}>{content}</button>
     );
 }

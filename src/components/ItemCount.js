@@ -1,19 +1,19 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import Button from "./Button";
 import "./styles/Button.css";
 
-export default function ItemCount(props) {
-    const [contador, setContador] = useState(props.initial);
-    const add = () => (contador < props.stock) && setContador(contador + 1);
-    const subtract = () => (contador > props.initial) && setContador(contador - 1);
-    const onAdd = () => console.log(`tienes ${contador} unidades de ${props.name}`)
+export default function ItemCount({initial, stock , onAdd , className}) {
+    const [count, setCount] = useState(initial);
+    const add = () => (count < stock) && setCount(count + 1);
+    const subtract = () => (count > initial) && setCount(count - 1);
 
     return (
-    <div className={props.className}>
-        <span>{contador}</span>
+    <div className={className}>
+        <span>{count}</span>
         <Button content="-" className="btn" event={subtract}/>
         <Button content="+" className="btn" event={add}/>
-        <Button content="Agregar" className="btn" event={onAdd}/>
+        <Button content="Agregar" className="btn" event={() => onAdd(count)}/>
     </div>
     );
 }
