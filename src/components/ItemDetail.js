@@ -1,15 +1,17 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom"
+import { CartContext } from "./context/cartContext";
 import ItemCount from "./ItemCount";
 import "./styles/itemDetail.css";
 
 export default function ItemDetail({item}){
+    const { addToCart } = useContext(CartContext);
     const [count, setCount] = useState(0);
     const navigate = useNavigate();
     const getCounter = (quantityToAdd) => {
         setCount(quantityToAdd);
-        console.log(quantityToAdd);
-        navigate("/cart")
+        addToCart(item, quantityToAdd)
+        /* navigate("/cart"); */
     };
     return (
         <main className="itemDetail">

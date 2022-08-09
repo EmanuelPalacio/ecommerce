@@ -9,7 +9,6 @@ export default function ItemDetailContainer (){
     const getOneProducts = async (id) => {
         const getData = await data
         setItem(getData.filter((item) => item.id === parseInt(id))[0])
-        console.log(getData.filter((item) => item.id === parseInt(id))[0])
     };
     useEffect(()=>{
         getOneProducts(id);
