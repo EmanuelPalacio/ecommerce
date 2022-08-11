@@ -5,8 +5,22 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import "./components/styles/style.css";
 import CartProvider from './components/context/cartContext';
 import Cart from './components/Cart';
+import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
+import { useEffect } from 'react';
+
+
 
 function App() {
+
+  useEffect(() => {
+    const db = getFirestore();
+    async function getItems(db) {
+      const products = collection(db);
+      const Snapshot = await getDocs(products);
+      const List = Snapshot.docs.map(doc => doc.data());
+      return List;
+      }
+  },[])
   return (
     <div className="App">
         <CartProvider>
