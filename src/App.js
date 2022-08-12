@@ -12,7 +12,7 @@ import { useEffect } from 'react';
 
 function App() {
 
-  useEffect(() => {
+  /* useEffect(() => {
     const db = getFirestore();
     async function getItems(db) {
       const products = collection(db);
@@ -20,7 +20,7 @@ function App() {
       const List = Snapshot.docs.map(doc => doc.data());
       return List;
       }
-  },[])
+  },[]) */
   return (
     <div className="App">
         <CartProvider>

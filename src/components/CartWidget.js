@@ -9,7 +9,7 @@ const CartWidget = (props) => {
     return (
         <div>
             <FontAwesomeIcon icon={faCartShopping} size='3x' color='black'/>
-            {cart.length !== 0 && <span>{cart.length}</span>}
+            {cart.length !== 0 && <span>{cart.map(e => e.quantity).reduce((a, b) => a + b)}</span>}
         </div>
     )
 }

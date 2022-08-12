@@ -3,9 +3,9 @@ import Button from "./Button";
 import "./styles/Button.css";
 
 export default function ItemCount({initial, stock , onAdd , className}) {
-    const [count, setCount] = useState(initial);
+    const [count, setCount] = useState(initial === undefined ? 0 : initial);
     const add = () => (count < stock) && setCount(count + 1);
-    const subtract = () => (count > initial) && setCount(count - 1);
+    const subtract = () => (count > (initial === undefined ? 0 : initial)) && setCount(count - 1);
 
     return (
     <div className={className}>

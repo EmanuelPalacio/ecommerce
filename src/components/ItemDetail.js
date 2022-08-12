@@ -25,7 +25,7 @@ export default function ItemDetail({item}){
                 <div className="itemDetail__box">
                     <div>
                         <p className="itemDetail__description">{item.description}Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione, reprehenderit? Maxime explicabo hic ducimus dignissimos cumque officiis eaque animi delectus, suscipit commodi aut doloribus! Quae non commodi ea deleniti natus.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione, reprehenderit? Maxime explicabo hic ducimus dignissimos cumque officiis eaque animi delectus, suscipit commodi aut doloribus! Quae non commodi ea deleniti natus.</p>
-                        <ItemCount className="itemDetail__count" stock={5} initial={1} onAdd={getCounter}/>
+                        <ItemCount className="itemDetail__count" stock={10} onAdd={getCounter}/>
                     </div>
                 </div>
             </div>

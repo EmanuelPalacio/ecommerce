@@ -15,6 +15,7 @@ export default function Cart () {
                         {item.title}
                     </h3>
                     <img src={item.imagen}/>
+                    <span>{item.quantity}</span>
                     <Button content="X" className="btn" event={() => removeItem(item) }/>
                 </li>
                 )};
