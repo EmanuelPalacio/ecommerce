@@ -1,9 +1,12 @@
 import logo from '../images/Logo.svg';
 import CartWidget from './CartWidget';
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+import { useContext } from 'react';
+import { CartContext } from './context/cartContext';
 import './styles/NavBar.css';
 
 const NavBar = () => {
+    const {cart} = useContext(CartContext)
     return (
         <header>
             
@@ -29,11 +32,13 @@ const NavBar = () => {
                         accesorios
                     </Link>
                 </li>
-                <li className='menu__item'>
-                    <Link className='menu__link' to={"/Cart"}>
-                        <CartWidget/>
-                    </Link>
-                </li>
+                {cart.length !== 0 &&
+                    <li className='menu__item'>
+                        <Link className='menu__link' to={"/Cart"}>
+                            <CartWidget/>
+                        </Link>
+                    </li>
+                }
             </ul>
         </header>
     )

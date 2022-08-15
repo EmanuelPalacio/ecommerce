@@ -6,13 +6,12 @@ export default function CartProvider ({children}) {
     const [cart , setCart] = useState([])
     
     const searchItem = (item) => cart.findIndex((e) => e.id === item.id);
-
+    const isInCart = (item) => cart.some((e) => e.id === item.id);
     const addToCart = (item, quantity) => {
         const addItem = {...item, quantity: quantity};
         // Logica de diplicados
         searchItem(item);
-        const isInCart = cart.some((e) => e.id === item.id);
-        return isInCart ? (cart.splice(searchItem(item), 1 , addItem),  setCart([...cart])) : 
+        return isInCart(item) ? (cart.splice(searchItem(item), 1 , addItem),  setCart([...cart])) : 
         setCart([...cart,addItem]);
     }
     const removeItem = (item) => {
@@ -20,9 +19,8 @@ export default function CartProvider ({children}) {
         return setCart([...cart]);
     }
     const clearCart = () => setCart([]);
-    console.log(cart)
     return(
-        <CartContext.Provider value={{addToCart, clearCart, cart , removeItem }}>
+        <CartContext.Provider value={{addToCart, clearCart, cart , removeItem, isInCart }}>
             {children}
         </CartContext.Provider>
     )

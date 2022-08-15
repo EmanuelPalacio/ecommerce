@@ -6,11 +6,11 @@ import { CartContext } from './context/cartContext';
 
 const CartWidget = (props) => {
     const {cart} = useContext(CartContext)
-    return (
-        <div>
-            <FontAwesomeIcon icon={faCartShopping} size='3x' color='black'/>
-            {cart.length !== 0 && <span>{cart.map(e => e.quantity).reduce((a, b) => a + b)}</span>}
-        </div>
-    )
-}
+        return (
+            <div>
+                <FontAwesomeIcon icon={faCartShopping} size='3x' color='black'/>
+                <span>{cart.length !== 0 && cart.map(e => e.quantity).reduce((a, b) => a + b)}</span>
+            </div>
+        )
+    }
 export default CartWidget;
