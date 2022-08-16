@@ -15,9 +15,9 @@ export default function Cart () {
                     {cart.map((item) => 
                 <li className="cartContainer__item" key={item.id} >
                     <h3>
-                        {item.title}
+                        {item.name}
                     </h3>
-                    <img src={item.imagen}/>
+                    <img src={item.img}/>
                     <span>{item.quantity}</span>
                     <span>${item.price}</span>
                     <Button content="X" className="btn" event={() => removeItem(item) }/>

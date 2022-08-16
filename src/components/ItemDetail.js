@@ -19,8 +19,8 @@ export default function ItemDetail({item}){
             <div className="itemDetail__container">
                 <div className="itemDetail__box" >
                     <div>
-                        <h3 className="itemDetail__title">{item.title}</h3>
-                        <img className="itemDetail__img" src={`${item.imagen}`}/>
+                        <h3 className="itemDetail__title">{item.name}</h3>
+                        <img className="itemDetail__img" src={item.img}/>
                     </div>
                 </div>
                 <div className="itemDetail__box">

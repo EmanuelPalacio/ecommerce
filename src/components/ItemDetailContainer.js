@@ -1,18 +1,23 @@
 import { useState, useEffect } from "react";
-import { data } from "../mock/mock";
 import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
+import { doc, getFirestore, getDoc } from "firebase/firestore/lite";;
 
 export default function ItemDetailContainer (){
     const [item, setItem] = useState([]);
     const { id } = useParams();
-    const getOneProducts = async (id) => {
-        const getData = await data
-        setItem(getData.filter((item) => item.id === parseInt(id))[0])
-    };
+    const db = getFirestore();
+    const productId = doc(db , 'products', id);
+    const getOneProducts = async () => {
+        const getItemId = await getDoc(productId);
+        const product = getItemId.data();
+        return setItem({id: getItemId.id,...product});
+        } 
+        
+
     useEffect(()=>{
-        getOneProducts(id);
-    },[id])
+        getOneProducts();
+    },[id]); 
 
     return(
         <ItemDetail item={item}/>

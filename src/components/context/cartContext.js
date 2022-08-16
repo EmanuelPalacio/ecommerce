@@ -19,6 +19,9 @@ export default function CartProvider ({children}) {
         return setCart([...cart]);
     }
     const clearCart = () => setCart([]);
+
+    useEffect(()=> console.log(cart),[cart.length])
+
     return(
         <CartContext.Provider value={{addToCart, clearCart, cart , removeItem, isInCart }}>
             {children}

@@ -1,21 +1,24 @@
 import React from "react";
-import {useState, useEffect} from "react";
 import ItemList from "./ItemList";
-import { data } from "../mock/mock";
+import {useState, useEffect} from "react";
 import {useParams} from "react-router-dom";
+import { collection, getFirestore, getDocs, query, where } from "firebase/firestore/lite";
 
 const ItemListContainer = (props) => {
-    const [listProducts, setListProducts]= useState([])
+    const [listProducts, setListProducts]= useState([]);
     const { category } = useParams();
-    console.log(category);
+    const db = getFirestore();
     const getProducts = async () => {
-        const getData = await data
-        category ? setListProducts(getData.filter((product)=> product.category === category)) : 
-        setListProducts(getData);
-    };  
+        const productsCol = collection(db , 'products');
+        const  getDoc = category ? await getDocs(query(productsCol, where("category", "==", category))) : await getDocs(productsCol)
+        const productsList = getDoc.docs.map((doc) => ({id: doc.id, ...doc.data()}));
+        // devuelve los productos que coincidan con la categoria sino hay categoria carga todos los productos
+        return  setListProducts([...productsList]);
+        }
+    
     useEffect(()=>{
         getProducts();
-    }, [category]); //el array vacio hace que se ejecute una sola vez la llamada
+        },[category])
 
     return (
         <main>
