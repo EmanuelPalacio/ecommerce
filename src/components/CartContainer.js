@@ -3,6 +3,7 @@ import Error404 from "./Error404";
 import { useContext } from "react";
 import { CartContext } from "./context/cartContext";
 import "./styles/CartContainer.css"
+import PayCart from "./PayCart";
 
 export default function CartContainer () {
     const {cart} = useContext(CartContext);       
@@ -12,8 +13,7 @@ export default function CartContainer () {
                 <Error404/> :
                 <div className="cartContainer">
                     <Cart/>
-                    <div className="cartContainer__pay">
-                    </div>
+                    <PayCart/>
                 </div>
                 }
             </main>
