@@ -19,11 +19,11 @@ export default function CartProvider ({children}) {
         return setCart([...cart]);
     }
     const clearCart = () => setCart([]);
-
-    useEffect(()=> console.log(cart),[cart.length])
+    const totalPrice =  cart.length != 0 && cart.map((e)=> e.price*e.quantity).reduce((a,b)=> a + b,0)
+    const productsInCart = cart.length
 
     return(
-        <CartContext.Provider value={{addToCart, clearCart, cart , removeItem, isInCart }}>
+        <CartContext.Provider value={{addToCart, clearCart, cart , removeItem, isInCart, totalPrice, productsInCart }}>
             {children}
         </CartContext.Provider>
     )

@@ -1,0 +1,16 @@
+$basecolor: #f5ecd4;
+$basecolorContrast: #C7BEA2;
+$textNavBar: #9eba18;
+$text: #9A9483;
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'DynaPuff', cursive;
+    font-weight: 400;
+}
+.App {
+    min-height: 100vh;
+    background-color: $basecolorContrast ;
+}

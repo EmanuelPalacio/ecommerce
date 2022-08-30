@@ -5,7 +5,7 @@ import { CartContext } from "./context/cartContext";
 
 
 export default function PayCart (){
-    const {cart} = useContext(CartContext);
+    const {cart , priceTotal} = useContext(CartContext);
     const [buyer, setBuyer] = useState({});
     const [purchaseId, setPurchaseId] = useState("");
     const db = getFirestore();
@@ -58,7 +58,8 @@ export default function PayCart (){
         e.preventDefault();
         const data = await addDoc(collection(db, "buyers"),{
             buyer,
-            item: cart
+            item: cart,
+            total: priceTotal
         })
         setPurchaseId(`${data.id}`)
         /* mercadoPago(); */

@@ -1,0 +1,15 @@
+.btn {
+    color: $textNavBar;
+    padding: 15px;
+    margin: 5px;
+    border-radius: 5px;
+    background-color: $basecolor;
+    border: none;
+    cursor: pointer;;
+        &:hover{
+            transform: scale(1.1);
+        }
+        &:active{
+            transform: scale(0.9);
+        }
+}

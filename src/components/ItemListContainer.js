@@ -22,7 +22,6 @@ const ItemListContainer = (props) => {
 
     return (
         <main>
-            <h1>{props.greeting}</h1>
             { listProducts.length == 0 ? <p>Cargando...</p>  : <ItemList listProducts={listProducts}/>}
         </main>
     )

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Button from "./Button";
-import "./styles/Button.css";
 
 export default function ItemCount({initial, stock , onAdd , className}) {
     const [count, setCount] = useState(initial === undefined ? 0 : initial);
@@ -9,8 +8,8 @@ export default function ItemCount({initial, stock , onAdd , className}) {
 
     return (
     <div className={className}>
-        <span>{count}</span>
         <Button content="-" className="btn" event={subtract}/>
+        <span>{count}</span>
         <Button content="+" className="btn" event={add}/>
         <Button content="Agregar" className="btn" event={() => onAdd(count)}/>
     </div>

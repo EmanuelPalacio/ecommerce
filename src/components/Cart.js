@@ -10,7 +10,7 @@ export default function Cart () {
     
     console.log(priceTotal)
     return(
-        <table className="cartContainer__products">
+        <table>
             <thead>
                 <tr>
                     <td colSpan={2}>Producto</td>
@@ -18,9 +18,9 @@ export default function Cart () {
                     <td>Precio x Cantidad</td>
                 </tr>
             </thead>
-            <tbody className="cartContainer__list">
+            <tbody>
                     {cart.map((item) => 
-                <tr className="cartContainer__item" key={item.id} >
+                <tr key={item.id} >
                     <th>{item.name}</th>
                     <th><img src={item.img} alt={item.name}/></th>
                     <th>{item.quantity}</th>

@@ -2,7 +2,6 @@ import Cart from "./Cart";
 import Error404 from "./Error404";
 import { useContext } from "react";
 import { CartContext } from "./context/cartContext";
-import "./styles/CartContainer.css"
 import PayCart from "./PayCart";
 
 export default function CartContainer () {

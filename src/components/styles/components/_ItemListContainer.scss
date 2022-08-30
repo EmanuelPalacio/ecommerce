@@ -1,0 +1,46 @@
+.card_container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-auto-rows: 350px;
+    padding: 10vh;
+    gap: 10px;
+
+    .card {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 15px;
+        text-align: center;
+        background: linear-gradient(225deg, $basecolor 30%, $textNavBar 100%);
+        box-shadow: 0px 10px 13px -7px #494747, 5px 5px 27px 5px rgba(0,0,0,0.3);
+        img {
+            z-index: 2;
+            margin-top: 30px;
+            width: 80%;
+            height: auto;  
+        }
+        .card__count{
+            z-index: 2;
+        }
+
+        &::before{
+            content: "";
+            z-index: 1;
+            position: absolute;
+            background-image: url("https://firebasestorage.googleapis.com/v0/b/ecommerce-veterinaria.appspot.com/o/iconos%2Flogo-Dpelos-contraste.svg?alt=media&token=fe9b4e29-d672-444d-9a11-2b2fe225d7e2");
+            background-repeat: no-repeat;
+            background-position: 45% 60%;
+            background-size: 50%;
+            height: 100%;
+            width: 100%;
+            align-self: center;
+            justify-self: center;
+        }
+        &:hover{
+            transform: scale(1.1);
+            z-index: 4;
+        }
+    }
+}

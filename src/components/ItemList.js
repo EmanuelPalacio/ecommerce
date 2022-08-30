@@ -1,6 +1,4 @@
-import React, {useState} from "react";
 import Item from "./Item";
-import "./styles/Item.css";
 
 export default function ItemList ({listProducts}) {
         return (
