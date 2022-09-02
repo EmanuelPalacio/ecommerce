@@ -1,13 +1,13 @@
-import { addDoc, collection, getFirestore } from "firebase/firestore/lite";
-import { useContext, useState } from "react";
+import { addDoc, collection, getFirestore, firestore } from "firebase/firestore/lite";
+import { useContext, useEffect, useState } from "react";
 import Button from "./Button"
 import { CartContext } from "./context/cartContext";
 
 
-export default function PayCart (){
-    const {cart , priceTotal} = useContext(CartContext);
+export default function PayCart ({getPurchaseId}){
+    const {cart , totalPrice} = useContext(CartContext);
     const [buyer, setBuyer] = useState({});
-    const [purchaseId, setPurchaseId] = useState("");
+    const [validation, setValidation] = useState(false);
     const db = getFirestore();
     const mercadoPago = async () => {
         const productosToMap = cart.map(Element => {
@@ -48,25 +48,28 @@ export default function PayCart (){
                 }   
             }); */ // No funciona desde un localHost o una pagina http
 }
-    const buyerData = (e) => {
-        setBuyer({
+    const buyerData = (e) => { 
+        e.target.name != "emailValidation" && setBuyer({
             ...buyer,
             [e.target.name]: e.target.value
         })
+
+        e.target.name == "emailValidation" && setValidation(e.target.value === buyer.email)
     }
     const sendForm = async (e)=>{
         e.preventDefault();
-        const data = await addDoc(collection(db, "buyers"),{
-            buyer,
-            item: cart,
-            total: priceTotal
-        })
-        setPurchaseId(`${data.id}`)
-        /* mercadoPago(); */
+        if(validation){
+
+            const data = await addDoc(collection(db, "buyers"),{
+                ...buyer,
+                item: cart,
+                total: `$${totalPrice}`
+            })
+            getPurchaseId(`${data.id}`)
+            /* mercadoPago(); */
+        }else console.log("No coinciden los email")
     }
     return(
-        <>
-        {!purchaseId ?
         <div className="cartContainer__pay">
             <form name="formulario" method="post" onSubmit={sendForm}>
                 <label className="form__item form__item--Nombre">
@@ -78,14 +81,11 @@ export default function PayCart (){
                 <label className="form__item form__item--email">
                     <input className="input" name="email"  type="email"  placeholder="email"onChange={buyerData} required/>
                 </label>
+                <label className="form__item form__item--email">
+                    <input className="input" name="emailValidation"  type="email"  placeholder="email" onChange={buyerData} required/>
+                </label>
                 <Button type="submit" content="comprar" className="btn" />
             </form>
         </div>
-        :
-        <div>
-            <h1>el numero de su compra es:{purchaseId}</h1>
-        </div>    
-        }
-        </>
     )
 }

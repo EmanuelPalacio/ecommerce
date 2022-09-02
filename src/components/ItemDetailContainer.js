@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
-import { doc, getFirestore, getDoc } from "firebase/firestore/lite";;
+import { doc, getFirestore, getDoc} from "firebase/firestore/lite";
+import Error404 from "./Error404"
 
 export default function ItemDetailContainer (){
     const [item, setItem] = useState([]);
@@ -11,15 +12,16 @@ export default function ItemDetailContainer (){
     const getOneProducts = async () => {
         const getItemId = await getDoc(productId);
         const product = getItemId.data();
-        return setItem({id: getItemId.id,...product});
+        return product == undefined ? setItem(false) : setItem({id: getItemId.id,...product});
         } 
-        
 
     useEffect(()=>{
         getOneProducts();
     },[id]); 
 
     return(
-        <ItemDetail item={item}/>
+        <>
+        {item ? <ItemDetail item={item}/> : <Error404 text="No tenemos el producto que esta buscando"/> }
+        </>
     )
 }

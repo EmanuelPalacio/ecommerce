@@ -2,8 +2,8 @@ import ItemDetailContainer from './components/ItemDetailContainer';
 import ItemListContainer from './components/ItemListContainer';
 import NavBar from './components/NavBar';
 import CartContainer from './components/CartContainer';
-import CartProvider, { CartContext } from './components/context/cartContext';
-
+import CartProvider from './components/context/cartContext';
+import Error404 from './components/Error404'; 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import "./components/styles/styles.scss";
 
@@ -21,8 +21,7 @@ function App() {
               <Route path="/item/:id" element={<ItemDetailContainer />} />
               <Route path="/category/:category" element={<ItemListContainer />}/>
               <Route path="/cart" element={<CartContainer/>} />
-              <Route path="/about" element={<h1>About</h1>} />
-              <Route path="*" element={<ItemListContainer />} />
+              <Route path="*" element={<Error404 text="Ups, no encontramos lo que esta buscando"/>} />
             </Routes>
           </BrowserRouter>
         </CartProvider>

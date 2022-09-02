@@ -11,15 +11,14 @@ export default function Cart () {
     console.log(priceTotal)
     return(
         <table>
-            <thead>
+            <tbody>
                 <tr>
                     <td colSpan={2}>Producto</td>
                     <td>Cantidad</td>
                     <td>Precio x Cantidad</td>
+                    <td></td>
                 </tr>
-            </thead>
-            <tbody>
-                    {cart.map((item) => 
+                {cart.map((item) => 
                 <tr key={item.id} >
                     <th>{item.name}</th>
                     <th><img src={item.img} alt={item.name}/></th>
