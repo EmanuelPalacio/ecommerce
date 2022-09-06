@@ -10,7 +10,7 @@ export default function ItemDetail({item}){
     const navigate = useNavigate();
     const goCart = () => navigate("/cart")
     const getCounter = (quantityToAdd) => {
-        setCount(quantityToAdd);
+        setCount(count+quantityToAdd);
         addToCart(item, quantityToAdd)
     };
     return (
@@ -19,7 +19,7 @@ export default function ItemDetail({item}){
                 <div className="itemDetail__box" >
                     <div>
                         <h3 className="itemDetail__title">{item.name}</h3>
-                        <img className="itemDetail__img" src={item.img}/>
+                        <img className="itemDetail__img" src={item.img} alt={item.name}/>
                     </div>
                 </div>
                 <div className="itemDetail__box">

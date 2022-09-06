@@ -19,7 +19,7 @@ export default function CartContainer () {
                 :
                 <div className="purchaseId">
                     <div className="purchaseId__card">
-                        <img src="https://firebasestorage.googleapis.com/v0/b/ecommerce-veterinaria.appspot.com/o/iconos%2Fcompra-mascota.png?alt=media&token=4d6ec0b0-3490-4c06-a239-dfeaec48043a"/>
+                        <img src="https://firebasestorage.googleapis.com/v0/b/ecommerce-veterinaria.appspot.com/o/iconos%2Fcompra-mascota.png?alt=media&token=4d6ec0b0-3490-4c06-a239-dfeaec48043a" alt="perro con la compra"/>
                         <div>
                             <p>Su compra se ah realizo con exito copie el numero de compra para poder consultar su pedido</p>
                             <p>el numero de su compra es:<span> {purchaseId}</span></p>

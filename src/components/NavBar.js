@@ -1,16 +1,14 @@
 import CartWidget from './CartWidget';
 import { Link } from "react-router-dom";
-import { useContext } from 'react';
-import { CartContext } from './context/cartContext';
+
 
 const NavBar = () => {
-    const {cart} = useContext(CartContext)
     return (
         <header>
             
             <div className='logo'>
                 <Link className='logo__link' to={'/'} >
-                    <img className='logo__image' src= "https://firebasestorage.googleapis.com/v0/b/ecommerce-veterinaria.appspot.com/o/iconos%2Flogo-Dpelos.svg?alt=media&token=fb1e4880-5c25-472f-a637-788ffc9f8284"/>
+                    <img className='logo__image' src= "https://firebasestorage.googleapis.com/v0/b/ecommerce-veterinaria.appspot.com/o/iconos%2Flogo-Dpelos.svg?alt=media&token=fb1e4880-5c25-472f-a637-788ffc9f8284" alt='logo'/>
                 </Link>
             </div>
             <ul className='menu'>

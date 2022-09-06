@@ -7,7 +7,7 @@ export default function Error404 ({text}){
     const backToHome = () => navigate("/");
     return(
         <div className="error404">
-            <img src="https://firebasestorage.googleapis.com/v0/b/ecommerce-veterinaria.appspot.com/o/iconos%2Fpato-detective.svg?alt=media&token=579c63e3-6d74-4b72-9e4e-7e51e3efa073"/>
+            <img src="https://firebasestorage.googleapis.com/v0/b/ecommerce-veterinaria.appspot.com/o/iconos%2Fpato-detective.svg?alt=media&token=579c63e3-6d74-4b72-9e4e-7e51e3efa073" alt="pato detective"/>
             <p>{text}</p>
             <Button content="Volver al inicio" className="btn" event={backToHome}/>
         </div>

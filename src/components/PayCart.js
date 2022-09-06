@@ -1,5 +1,5 @@
-import { addDoc, collection, getFirestore, firestore } from "firebase/firestore/lite";
-import { useContext, useEffect, useState } from "react";
+import { addDoc, collection, getFirestore } from "firebase/firestore/lite";
+import { useContext, useState } from "react";
 import Button from "./Button"
 import { CartContext } from "./context/cartContext";
 
@@ -9,7 +9,7 @@ export default function PayCart ({getPurchaseId}){
     const [buyer, setBuyer] = useState({});
     const [validation, setValidation] = useState(false);
     const db = getFirestore();
-    const mercadoPago = async () => {
+    /*const mercadoPago = async () => {
         const productosToMap = cart.map(Element => {
                 let newElement = 
                     {
@@ -46,15 +46,15 @@ export default function PayCart ({getPurchaseId}){
                 headers: {
                 'Authorization': 'Bearer TEST-1420488536071000-081618-db838e9fb662c6944f5ea9e1c8639c09-386559401'
                 }   
-            }); */ // No funciona desde un localHost o una pagina http
-}
+            }); */ // No funciona desde un localHost o una pagina http}
+    
     const buyerData = (e) => { 
-        e.target.name != "emailValidation" && setBuyer({
+        e.target.name !== "emailValidation" && setBuyer({
             ...buyer,
             [e.target.name]: e.target.value
         })
 
-        e.target.name == "emailValidation" && setValidation(e.target.value === buyer.email)
+        e.target.name === "emailValidation" && setValidation(e.target.value === buyer.email)
     }
     const sendForm = async (e)=>{
         e.preventDefault();

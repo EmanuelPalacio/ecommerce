@@ -1,4 +1,4 @@
-import { createContext , useEffect, useState } from "react";
+import { createContext , useState } from "react";
 
 export const CartContext = createContext();
 
@@ -19,7 +19,7 @@ export default function CartProvider ({children}) {
         return setCart([...cart]);
     }
     const clearCart = () => setCart([]);
-    const totalPrice =  cart.length != 0 && cart.map((e)=> e.price*e.quantity).reduce((a,b)=> a + b,0)
+    const totalPrice =  cart.length !== 0 && cart.map((e)=> e.price*e.quantity).reduce((a,b)=> a + b,0)
     const productsInCart = cart.length
 
     return(

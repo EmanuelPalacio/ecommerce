@@ -25,7 +25,8 @@ const ItemListContainer = (props) => {
     
     useEffect(()=>{
         getProducts();
-        },[category])
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        }, [category])
 
     return (
         <main>

@@ -12,12 +12,13 @@ export default function ItemDetailContainer (){
     const getOneProducts = async () => {
         const getItemId = await getDoc(productId);
         const product = getItemId.data();
-        return product == undefined ? setItem(false) : setItem({id: getItemId.id,...product});
+        return product === undefined ? setItem(false) : setItem({id: getItemId.id,...product});
         } 
 
     useEffect(()=>{
         getOneProducts();
-    },[id]); 
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [id]); 
 
     return(
         <>
