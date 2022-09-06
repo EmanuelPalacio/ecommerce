@@ -53,5 +53,6 @@ npm install sass
 </code></pre>
 <img src="https://firebasestorage.googleapis.com/v0/b/ecommerce-veterinaria.appspot.com/o/gift.gif?alt=media&token=7cf54040-d170-4b24-a0d7-2e0350bc13da" alt="gift del proyecto" width=500px heigth=300px/>
 </body></html>
+[![Netlify Status](https://api.netlify.com/api/v1/badges/56820f7a-bf7f-41cf-86a4-5eb19ce9dc88/deploy-status)](https://app.netlify.com/sites/dpelos/deploys)
 
 
