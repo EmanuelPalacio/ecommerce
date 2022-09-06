@@ -5,7 +5,7 @@ import { CartContext } from "./context/cartContext";
 
 
 export default function PayCart ({getPurchaseId}){
-    const {cart , totalPrice} = useContext(CartContext);
+    const {cart , totalPrice, clearCart} = useContext(CartContext);
     const [buyer, setBuyer] = useState({});
     const [validation, setValidation] = useState(false);
     const db = getFirestore();
@@ -66,6 +66,7 @@ export default function PayCart ({getPurchaseId}){
                 total: `$${totalPrice}`
             })
             getPurchaseId(`${data.id}`)
+            clearCart();
             /* mercadoPago(); */
         }else console.log("No coinciden los email")
     }
@@ -84,7 +85,7 @@ export default function PayCart ({getPurchaseId}){
                 <label className="form__item form__item--email">
                     <input className="input" name="emailValidation"  type="email"  placeholder="email" onChange={buyerData} required/>
                 </label>
-                <Button type="submit" content="comprar" className="btn" />
+                <Button type="submit" content="comprar" className="btn"/>
             </form>
         </div>
     )

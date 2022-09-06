@@ -10,7 +10,7 @@ export default function CartContainer () {
     const getPurchaseId  = (get) =>  {setPurchaseId(get)}  
         return(
             <main>
-                {productsInCart === 0 ?
+                {productsInCart === 0 && !purchaseId ?
                 <Error404/> : !purchaseId ?
                 <div className="cartContainer">
                     <Cart/>
