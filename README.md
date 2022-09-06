@@ -51,7 +51,7 @@ npm install firebase
 <pre><code class="has-line-data" data-line-start="33" data-line-end="37">
 npm install sass
 </code></pre>
-<img src="https://i.imgur.com/1yBXXgz.gif"></img>
+<img src="https://firebasestorage.googleapis.com/v0/b/ecommerce-veterinaria.appspot.com/o/gift.gif?alt=media&token=7cf54040-d170-4b24-a0d7-2e0350bc13da" alt="gift del proyecto" width=500px heigth=300px/>
 </body></html>
 
 
